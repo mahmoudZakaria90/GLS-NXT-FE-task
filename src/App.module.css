@@ -1,0 +1,15 @@
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.article {
+  font-size: 50px;
+}
+
+.showButton {
+  position: sticky;
+  top: 15px;
+  left: 15px;
+}
