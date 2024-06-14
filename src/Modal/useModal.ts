@@ -1,6 +1,12 @@
 import { useEffect } from "react";
 
-const useModal = (modalRef, showButtonRef, saveButtonRef, closeButtonRef) => {
+const useModal = (
+  modalRef,
+  showButtonRef,
+  saveButtonRef,
+  closeButtonRef,
+  isOpen
+) => {
   useEffect(() => {
     const modal = modalRef.current;
     const showButton = showButtonRef.current;
@@ -11,6 +17,10 @@ const useModal = (modalRef, showButtonRef, saveButtonRef, closeButtonRef) => {
       modal.showModal();
       document.body.style.overflow = "hidden";
     };
+
+    if (isOpen) {
+      handleShow();
+    }
 
     const handleSave = () => {
       // Do Something

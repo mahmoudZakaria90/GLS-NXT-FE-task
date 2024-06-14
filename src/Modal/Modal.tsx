@@ -8,14 +8,18 @@ import useModal from "./useModal";
 // https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dialog
 // This one even is going to make `React.portal()` obselete.
 // It supports `ESC` button for closing the dialog.
-const Modal = forwardRef((props, showButtonRef) => {
+type ModalProps = {
+  isOpen?: boolean;
+};
+const Modal = forwardRef(({ isOpen }: ModalProps, showButtonRef) => {
   const modalRef = useRef<HTMLDialogElement>(null);
-
   const saveButtonRef = useRef<HTMLButtonElement>(null);
   const closeButtonRef = useRef<HTMLButtonElement>(null);
-  useModal(modalRef, showButtonRef, saveButtonRef, closeButtonRef);
+  useModal(modalRef, showButtonRef, saveButtonRef, closeButtonRef, isOpen);
+
   return (
     <dialog
+      data-testid="dialog"
       role="dialog"
       autoFocus
       tabIndex={1}
@@ -25,7 +29,11 @@ const Modal = forwardRef((props, showButtonRef) => {
       <header>
         <h1 tabIndex={2}>Modal title</h1>
       </header>
-      <section className={modalCSS.modalBody} tabIndex={3}>
+      <section
+        data-testid="dialog-body"
+        className={modalCSS.modalBody}
+        tabIndex={3}
+      >
         This modal dialog has a groovy backdrop!This modal dialog has a groovy
         backdrop!This modal dialog has a groovy backdrop!This modal dialog has a
         groovy backdrop! This modal dialog has a groovy backdrop!This modal
