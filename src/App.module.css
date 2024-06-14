@@ -4,6 +4,20 @@
   padding: 2rem;
 }
 
+.modal {
+  border: 2px solid rgb(136, 215, 83);
+  animation: fade-out 500ms ease-out;
+
+  &[open] {
+    animation: fade-in 500ms ease-out;
+  }
+  &[open]::backdrop {
+    animation: backdrop-fade-in 500ms ease-out forwards;
+  }
+  &::backdrop {
+    animation: backdrop-fade-out 500ms ease-out forwards;
+  }
+}
 .article {
   font-size: 50px;
 }
@@ -12,4 +26,48 @@
   position: sticky;
   top: 15px;
   left: 15px;
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+    display: none;
+  }
+
+  100% {
+    opacity: 1;
+    display: block;
+  }
+}
+
+@keyframes fade-out {
+  0% {
+    opacity: 1;
+    display: block;
+  }
+
+  100% {
+    opacity: 0;
+    display: none;
+  }
+}
+
+@keyframes backdrop-fade-in {
+  0% {
+    background-color: rgba(173, 216, 230, 0);
+  }
+
+  100% {
+    background-color: rgba(173, 216, 230, 75%);
+  }
+}
+
+@keyframes backdrop-fade-out {
+  0% {
+    background-color: rgba(173, 216, 230, 75%);
+  }
+
+  100% {
+    background-color: rgba(173, 216, 230, 0);
+  }
 }

@@ -8,8 +8,3 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
-::backdrop {
-  background-color: aquamarine;
-  opacity: 0.75;
-}
