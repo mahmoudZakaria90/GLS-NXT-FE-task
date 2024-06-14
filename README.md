@@ -1,4 +1,4 @@
-# React + TypeScript + Vite
+# GLS/NXT
 
 ## Quick Run
 
@@ -6,7 +6,9 @@
 - For dev localhost, run `yarn dev`.
 - For test run `yarn test`.
 
-The modal component was inspired from the standard HTML5 `<dialog>` element, through here a full documentation via MDN https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dialog
+The modal component was inspired from the standard HTML5 `<dialog>` element, through here a full documentation via MDN https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dialog. <br>
+The html5 `<dialog>` element as per some docs is making `React.portal()` obselete.
+It supports `ESC` button for closing the dialog.
 
 ## How to use
 
