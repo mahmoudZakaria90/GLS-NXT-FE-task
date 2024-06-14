@@ -18,10 +18,6 @@ const useModal = (
       document.body.style.overflow = "hidden";
     };
 
-    if (isOpen) {
-      handleShow();
-    }
-
     const handleSave = () => {
       // Do Something
       alert("Data Saved!");
@@ -33,6 +29,24 @@ const useModal = (
       document.body.style.overflow = "visible";
     };
 
+    const handleCloseOutside = (event) => {
+      const rect = modal.getBoundingClientRect();
+      const isInDialog =
+        rect.top <= event.clientY &&
+        event.clientY <= rect.top + rect.height &&
+        rect.left <= event.clientX &&
+        event.clientX <= rect.left + rect.width;
+      if (!isInDialog) {
+        modal.close();
+      }
+    };
+
+    if (isOpen) {
+      handleShow();
+    } else {
+      handleClose();
+    }
+
     if (showButton && modalRef) {
       showButton.addEventListener("click", handleShow);
     }
@@ -43,10 +57,12 @@ const useModal = (
     if (closeButton && modal) {
       closeButton.addEventListener("click", handleClose);
     }
+    modal.addEventListener("click", handleCloseOutside);
     return () => {
       showButton.removeEventListener("click", handleShow);
       saveButton.removeEventListener("click", handleSave);
       closeButton.removeEventListener("click", handleClose);
+      modal.removeEventListener("click", handleCloseOutside);
     };
   });
 };

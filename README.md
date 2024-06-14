@@ -4,7 +4,25 @@
 
 - Run `yarn`;
 - For dev localhost, run `yarn dev`.
-- For test run `yarn test`
+- For test run `yarn test`.
+
+The modal component was inspired from the standard HTML5 `<dialog>` element, through here a full documentation via MDN https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dialog
+
+## How to use
+
+By ref
+
+```
+const showButtonRef = useRef<HTMLButtonElement>(null);
+<Modal ref={showButtonRef}>
+```
+
+Optionally, you can pass `isOpen` prop for showing modal on mounting.
+
+```
+const showButtonRef = useRef<HTMLButtonElement>(null);
+<Modal ref={showButtonRef} isOpen>
+```
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
