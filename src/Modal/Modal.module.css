@@ -9,6 +9,7 @@
     animation: backdrop-fade-in 500ms ease-out forwards;
   }
   &::backdrop {
+    background-color: rgba(173, 216, 230, 75%);
     animation: backdrop-fade-out 500ms ease-out forwards;
     padding: 2rem;
   }
