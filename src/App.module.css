@@ -7,7 +7,7 @@
 .modal {
   border: 2px solid rgb(136, 215, 83);
   animation: fade-out 500ms ease-out;
-
+  max-width: 500px;
   &[open] {
     animation: fade-in 500ms ease-out;
   }
@@ -16,7 +16,31 @@
   }
   &::backdrop {
     animation: backdrop-fade-out 500ms ease-out forwards;
+    padding: 2rem;
   }
+
+  & > button {
+    display: inline-block;
+    padding: 5px 10px;
+    background-color: rgb(9, 98, 166);
+    color: white;
+    border: none;
+    margin-right: 15px;
+    border-radius: 5px;
+  }
+  @media (min-width: 768px) {
+    max-width: 320px;
+  }
+  @media (min-width: 900px) {
+    max-width: 500px;
+  }
+  max-width: 65%;
+}
+
+.modalBody {
+  margin-block-end: 30px;
+  height: 72px;
+  overflow: auto;
 }
 .article {
   font-size: 50px;
