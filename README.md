@@ -16,8 +16,10 @@ By ref
 
 ```
 const showButtonRef = useRef<HTMLButtonElement>(null);
-<Modal ref={showButtonRef}>
+<Modal ref={showButtonRef} modalTitle="Modal title" modalBody="lorem ipsumlorem ipsumlorem ipsumlorem ipsum">
 ```
+
+In case no `modalTitle` or `modalBody` are passed a default content will be provided.
 
 Optionally, you can pass `isOpen` prop for showing modal on mounting.
 
