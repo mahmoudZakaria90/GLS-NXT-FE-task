@@ -8,30 +8,31 @@ import Modal from "./Modal/Modal";
 // https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dialog
 // This one even is going to make `React.portal()` obselete.
 // It supports `ESC` button for closing the dialog.
+
+const modalBody = (
+  <p>
+    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Facilis eligendi
+    dicta culpa ducimus minus numquam perferendis praesentium dolor beatae
+    ratione necessitatibus, libero delectus soluta earum, fuga eaque vel
+    molestiae aut. Lorem ipsum dolor, sit amet consectetur adipisicing elit. A
+    deleniti reprehenderit cum. Magni nam similique consequatur ad enim
+    voluptate quos quo quia nesciunt! Veritatis esse beatae quasi maiores atque
+    quae! Lorem ipsum dolor sit, amet consectetur adipisicing elit. Facilis
+    eligendi dicta culpa ducimus minus numquam perferendis praesentium dolor
+    beatae ratione necessitatibus, libero delectus soluta earum, fuga eaque vel
+    molestiae aut. Lorem ipsum dolor, sit amet consectetur adipisicing elit. A
+    deleniti reprehenderit cum. Magni nam similique consequatur ad enim
+    voluptate quos quo quia nesciunt! Veritatis esse beatae quasi maiores atque
+    quae!Lorem ipsum dolor sit, amet consectetur adipisicing elit. Facilis
+    eligendi dicta culpa ducimus minus numquam perferendis praesentium dolor
+    beatae ratione necessitatibus, libero delectus soluta earum, fuga eaque vel
+    molestiae aut. Lorem ipsum dolor, sit amet consectetur adipisicing elit. A
+    deleniti reprehenderit cum. Magni nam similique consequatur ad enim
+    voluptate quos quo quia nesciunt! Veritatis esse beatae quasi maiores atque
+    quae!
+  </p>
+);
 function App() {
-  const modalBody = (
-    <p>
-      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Facilis eligendi
-      dicta culpa ducimus minus numquam perferendis praesentium dolor beatae
-      ratione necessitatibus, libero delectus soluta earum, fuga eaque vel
-      molestiae aut. Lorem ipsum dolor, sit amet consectetur adipisicing elit. A
-      deleniti reprehenderit cum. Magni nam similique consequatur ad enim
-      voluptate quos quo quia nesciunt! Veritatis esse beatae quasi maiores
-      atque quae! Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-      Facilis eligendi dicta culpa ducimus minus numquam perferendis praesentium
-      dolor beatae ratione necessitatibus, libero delectus soluta earum, fuga
-      eaque vel molestiae aut. Lorem ipsum dolor, sit amet consectetur
-      adipisicing elit. A deleniti reprehenderit cum. Magni nam similique
-      consequatur ad enim voluptate quos quo quia nesciunt! Veritatis esse
-      beatae quasi maiores atque quae!Lorem ipsum dolor sit, amet consectetur
-      adipisicing elit. Facilis eligendi dicta culpa ducimus minus numquam
-      perferendis praesentium dolor beatae ratione necessitatibus, libero
-      delectus soluta earum, fuga eaque vel molestiae aut. Lorem ipsum dolor,
-      sit amet consectetur adipisicing elit. A deleniti reprehenderit cum. Magni
-      nam similique consequatur ad enim voluptate quos quo quia nesciunt!
-      Veritatis esse beatae quasi maiores atque quae!
-    </p>
-  );
   const showButtonRef = useRef<HTMLButtonElement>(null);
   return (
     <section className={appCSS.container}>
